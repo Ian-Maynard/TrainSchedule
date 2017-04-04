@@ -2,7 +2,7 @@
 <html lang="en">
 <head
   <meta charset="utf-8">
-  <title>Giphy App</title>
+  <title>Trainschedule App</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/css/normalize.css">
@@ -11,25 +11,31 @@
 </head>
 <body>
     <div class="jumbotron">
-      <h1>Giffy</h1>
+      <h1>The train is coming</h1>
       <div id="bFrame"></div> <!-- Output buttons here -->
     </div>
+  
   <div class="container">
-    <div class="row">
-        <div class="eight columns" style="margin-top: 5%">
-          <div id="gFrame"> </div> <!-- Output  the gifs in this div -->
+
+        <div class="row">
+            <div class="twelve columns" style="margin-top: 5%">
+              <div id="gFrame">This is Gframe </div> <!-- Output  the gifs in this div -->
+            </div>
         </div>
-        <div class="four columns" style="margin-top: 5%">
-          <div>
-              <form id="catForm">
-               <label for="cateGory">Category : <br></label>
-               <input type="text" id="cateGory"><br>
-               <input id="addCateGory" type="submit" value="Add">
-              </form>
-          </div> <!-- Input here -->
-        </div>  <!-- Enter  -->
-        </div> <!-- Row -->
-        </div> <!-- Container -->
+
+        <div class="row">
+            <div class="twelve columns" style="margin-top: 5%">
+              <div id="hFrame">This is Hframe </div> <!-- Output  the gifs in this div -->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="twelve columns" style="margin-top: 5%">
+              <div id="iFrame">This is Iframe</div> <!-- Output  the gifs in this div -->
+            </div>
+        </div>
+
+  </div> <!-- Container -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>

@@ -1,0 +1,108 @@
+/* 
+ Stylesheet for the Hangman game.
+ Copyright Ian Maynard -  2017  All rights reserved   
+*/
+
+*{
+  box-sizing: border-box;
+}  
+
+#tileRow{
+display: inline-block;
+align-content: center;
+}
+
+.header {
+  width:100%;
+  text-align: center;
+  font-family: 'Cormorant SC', serif;
+  color:gray;
+  font-size: 80px;
+  font-weight: 700px;
+  text-shadow: 1px 1px 1px red;
+}
+  .letter {
+    font-family: 'Creepster', serif;
+    font-size: 50px;
+    font-weight: 100px;
+    width: 80px;
+    height: 80px;
+    border-width: 0px;
+    border-bottom-width: 2px;
+    padding: 20px;
+    float: left;
+    margin: 10px;
+  }
+  
+  .letter-button-color {
+    background-color: black;
+    color:grey;
+    text-shadow: 1px 1px 1px red;
+    font-family: 'Creepster', serif;
+  }
+  
+
+  #display {
+    margin-top: 78px;
+    height: 500px;
+    width: 220px;
+    margin-left: 60px;
+  } 
+  
+  #buttons {
+    padding-top: 60px;
+    background-color: black;
+  }
+
+  #clear {
+    margin-left: 20px;
+    font-size: 25px;
+    color: black;
+    border-style: solid;
+    width: 100px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin: 0 0 100px; 
+/*  background-color: black;*/
+  }
+
+.footer {
+  clear:both;
+  position: absolute;
+  left:0;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  margin-top: -100px;
+  background-color: gray;
+  padding-top: 20px;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
