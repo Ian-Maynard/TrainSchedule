@@ -2,7 +2,7 @@
 <html lang="en">
 <head
   <meta charset="utf-8">
-  <title>Trainschedule App</title>
+  <title>Train schedule App</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/css/normalize.css">
@@ -10,44 +10,44 @@
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-    <div class="jumbotron">
+    <div class="jumbotron" style="background-image: url("assets/images/yuma.jpg");">
       <h1>The train is coming</h1>
-      <div id="bFrame"></div> <!-- Output buttons here -->
     </div>
   
   <div class="container">
 
         <div class="row">
             <div class="twelve columns" style="margin-top: 5%">
-              <div id="gFrame">This is Gframe </div> <!-- Output  the gifs in this div -->
+              <div id="hFrame"></div> <!-- Output the train rows to theis location z  xdiv -->
             </div>
         </div>
 
         <div class="row">
-            <div class="twelve columns" style="margin-top: 5%">
-              <div id="hFrame">This is Hframe </div> <!-- Output  the gifs in this div -->
-            </div>
-        </div>
+          <form>
+                <div class="four columns">
+                  <label for="trainName">Name:</label>
+                  <input class="u-full-width" id="trainName">
+                </div>
 
-        <div class="row">
-            <div class="twelve columns" style="margin-top: 5%">
-              <div id="iFrame">This is Iframe</div> <!-- Output  the gifs in this div -->
-            </div>
-        </div>
+                <div class="four columns">
+                  <label for="trainDest">Destination:</label>
+                  <input class="u-full-width" id="trainDest">
+                </div>
 
+                <div class="two columns">
+                  <label for="trainTime">Time:</label>
+                  <input class="u-full-width"  id="trainTime">
+                </div>
+
+                <div class="two columns">
+                  <label for="trainFreq">Frequency:</label>
+                  <input class="u-full-width" id="trainFreq">
+                </div>
+              <button class="btn btn-default" id="addTrain" type="submit">Submit</button>
+          </form>
+        </div> <!-- Row -->
   </div> <!-- Container -->
-<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBD0FinT2IqcnBdGiOlJWDJZ0cxINq-xlQ",
-    authDomain: "trainschedule-88339.firebaseapp.com",
-    databaseURL: "https://trainschedule-88339.firebaseio.com",
-    projectId: "trainschedule-88339",
-    storageBucket: "trainschedule-88339.appspot.com",
-    messagingSenderId: "609386761441"
-  };
-  firebase.initializeApp(config);
+
 </script>  
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 <script type="text/javascript" src="assets/javascript/app.js"></script>
