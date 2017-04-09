@@ -10,46 +10,66 @@
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-    <div class="jumbotron" style="background-image: url("assets/images/yuma.jpg");">
+    <div class="jumbotron" style="background-image: url("assets/images/yuma.jpg")">
       <h1>The train is coming</h1>
     </div>
   
   <div class="container">
-
         <div class="row">
             <div class="twelve columns" style="margin-top: 5%">
-              <div id="hFrame"></div> <!-- Output the train rows to theis location z  xdiv -->
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">Trains</h3>
+                        </div>
+                        <div class="panel-body" id="Train_Sched">
+                          <h4 id="dispName"> </h4>
+                          <h4 id="dispDest"></h4>
+                          <h4 id="dispTime"></h4>
+                          <h4 id="dispFreq"></h4>
+                        </div>
+                      </div>
             </div>
         </div>
 
         <div class="row">
-          <form>
+          <form role=form>
                 <div class="four columns">
-                  <label for="trainName">Name:</label>
-                  <input class="u-full-width" id="trainName">
+                  <label for="iName">Name:</label>
+                  <span class="nuTrain"><input class="u-full-width" id="iName"></span>
                 </div>
 
                 <div class="four columns">
-                  <label for="trainDest">Destination:</label>
-                  <input class="u-full-width" id="trainDest">
+                  <label for="iDest">Destination:</label>
+                  <span class="nuTrain"><input class="u-full-width" id="iDest"></span>
                 </div>
 
                 <div class="two columns">
-                  <label for="trainTime">Time:</label>
-                  <input class="u-full-width"  id="trainTime">
+                  <label for="iTime">Time:</label>
+                  <span class="nuTrain"><input class="u-full-width"  id="iTime"></span>
                 </div>
 
                 <div class="two columns">
-                  <label for="trainFreq">Frequency:</label>
-                  <input class="u-full-width" id="trainFreq">
+                  <label for="iFreq">Frequency:</label>
+                 <span class="nuTrain"> <input class="u-full-width" id="iFreq"></span>
                 </div>
               <button class="btn btn-default" id="addTrain" type="submit">Submit</button>
           </form>
         </div> <!-- Row -->
   </div> <!-- Container -->
+<script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script> 
+<script type="text/javascript">
 
-</script>  
+  var config = {
+    apiKey: "AIzaSyBD0FinT2IqcnBdGiOlJWDJZ0cxINq-xlQ",
+    authDomain: "trainschedule-88339.firebaseapp.com",
+    databaseURL: "https://trainschedule-88339.firebaseio.com",
+    projectId: "trainschedule-88339",
+    storageBucket: "trainschedule-88339.appspot.com",
+    messagingSenderId: "609386761441"
+  };
+    firebase.initializeApp(config);
+</script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-<script type="text/javascript" src="assets/javascript/app.js"></script>
+<script type="text/javascript" src="assets/javascript/app.js"></script>\
 </body>
 </html>

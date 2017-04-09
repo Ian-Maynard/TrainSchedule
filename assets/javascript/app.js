@@ -1,6 +1,4 @@
 // Init firebase 
-// Change the HTML to reflect
-
   var config = {
     apiKey: "AIzaSyBD0FinT2IqcnBdGiOlJWDJZ0cxINq-xlQ",
     authDomain: "trainschedule-88339.firebaseapp.com",
@@ -9,10 +7,10 @@
     storageBucket: "trainschedule-88339.appspot.com",
     messagingSenderId: "609386761441"
   };
-  
-  firebase.initializeApp(config);
-  var database = firebase.database();
+    firebase.initializeApp(config);
 
+
+  var database = firebase.database();
     // Initial Values
     var namE = "";
     var desT = "";
@@ -20,40 +18,51 @@
     var freQ = 0;
     
     // Capture Button Click
-    $("#add-user").on("click", function() {
+    $("#addTrain").on("click",function(event) {
       event.preventDefault();
 
-      namE = $("#namE-input").val().trim();
-      desT = $("#desT-input").val().trim();
-      timE = $("#timE-input").val().trim();
-      freQ = $("#freQ-input").val().trim();
+      namE = $("#iName").val().trim();
+      desT = $("#iDest").val().trim();
+      timE = $("#iTime").val().trim();
+      freQ = $("#iFreq").val().trim();
 
-      database.ref().set({
+      database.ref().push({
         name: namE,
-        destination : desT,
-        time : timE;
+        destination : desT, 
+        time : timE,
         frequency : freQ,
       });
 
+      nuRow(namE,desT,timE,freQ); // Create New ROw 
+
     });
 
-    // On click write to dataabse 
+    // On click write to firebase
 
-    database.ref().on("value", function(snapshot) {
-      console.log(snapshot.val());
-      console.log(snapshot.val().namE);
-      console.log(snapshot.val().desT);
-      console.log(snapshot.val().timE);
-      console.log(snapshot.val().freQ);
-
-      // Change the HTML to reflect
-      $("#namE-display").html(snapshot.val().namE);
-      $("#desT-display").html(snapshot.val().desT);
-      $("#timE-display").html(snapshot.val().timE);
-      $("#freQ-display").html(snapshot.val().freQ);
-
-      // Handle the errors
+    database.ref().on("value", function(snapshot) {   // Firebase listener 
+      nuRow(snapshot.val().namE,snapshot.val().desT,snapshot.val().timE,snapshot.val().freQ);
     }, function(errorObject) {
       console.log("Errors handled: " + errorObject.code);
     });
-  </script>
+
+
+
+function timCalc(){
+
+}// Calculate time
+
+
+function newRow(w,x,y,z){
+  var lnamE = w;
+  var ldesT = x;
+  var ltimE = y;
+  var lfreQ = z;
+  var nuRow=  $("<tr>");
+  var nuTd= $("<td");
+
+  // Here call timCalc to calculate next arrival and Minutes away. 
+  nuRow = nuRow+nuTd+lnamE+nuTd+ldesT+nuTd+ltimE+nuTd+lfreQ+nuTd; // Build the row.
+  $("#trnTab").append(nuRow); // Append the row to the stable. 
+
+} // Add to table 
+
