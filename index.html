@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="assets/css/normalize.css">
   <link rel="stylesheet" href="assets/css/skeleton.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script> 
 </head>
 <body>
     <div class="jumbotron" style="background-image: url("assets/images/yuma.jpg")">
@@ -21,11 +22,23 @@
                         <div class="panel-heading">
                           <h3 class="panel-title">Trains</h3>
                         </div>
-                        <div class="panel-body" id="Train_Sched">
-                          <h4 id="dispName"> </h4>
-                          <h4 id="dispDest"></h4>
-                          <h4 id="dispTime"></h4>
-                          <h4 id="dispFreq"></h4>
+                        <div class="panel-body">
+                          <table class="u-full-width">
+                                    <thead>
+                                      <tr>
+                                        <th>Name</th>
+                                        <th>Destination</th>
+                                        <th>Time</th>
+                                        <th>Frequency</th>
+                                        <th>Next Arrival</th>
+                                        <th>Minutes Away</th>
+                                      </tr>
+                                    </thead>
+
+                                    <tbody id="trnTab">
+                                     
+                                    </tbody>
+                                  </table>
                         </div>
                       </div>
             </div>
@@ -56,18 +69,7 @@
           </form>
         </div> <!-- Row -->
   </div> <!-- Container -->
-<script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script> 
 <script type="text/javascript">
-
-  var config = {
-    apiKey: "AIzaSyBD0FinT2IqcnBdGiOlJWDJZ0cxINq-xlQ",
-    authDomain: "trainschedule-88339.firebaseapp.com",
-    databaseURL: "https://trainschedule-88339.firebaseio.com",
-    projectId: "trainschedule-88339",
-    storageBucket: "trainschedule-88339.appspot.com",
-    messagingSenderId: "609386761441"
-  };
-    firebase.initializeApp(config);
 </script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 <script type="text/javascript" src="assets/javascript/app.js"></script>\
