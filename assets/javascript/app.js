@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
 
 // Init firebase 
 
@@ -14,15 +14,18 @@ $(document).ready(function(){
   var database = firebase.database();
 
     // Initialize Values
-
     var namE = "";
     var desT = "";
     var timE = 0;
     var freQ = 0;
     var nArr = 0; 
     var mAwa = 0; 
-    
     // Capture Button Click
+
+
+$(document).ready(function(){
+
+$("#trnTab").empty();
 
     $("#addTrain").on("click",function(event) {
       event.preventDefault();
@@ -30,16 +33,13 @@ $(document).ready(function(){
       desT = $("#iDest").val().trim();
       timE = $("#iTime").val().trim();
       freQ = $("#iFreq").val().trim();
-
           database.ref().push({
             name: namE,
             destination : desT, 
             time : timE,
             frequency : freQ,
           });
-
-      newRow(namE,desT,timE,freQ); // Create New ROw 
-
+      newRow(namE,desT,timE,freQ); // Create New row
     });
 
     // On click write to firebase
@@ -50,7 +50,7 @@ $(document).ready(function(){
       console.log("Errors handled: " + errorObject.code);
     });
 
-
+});
 
 function timCalc(){
 
@@ -68,7 +68,5 @@ function newRow(w,x,y,z){
   // Here call timCalc to calculate next arrival and Minutes away. 
   
   $("#trnTab").append(nRow); // Append the row to the table. 
-
 } // Add to table 
 
-});
